@@ -11,9 +11,7 @@ def generate_image(prompt: str,
                    width: int = 512,
                    height: int = 512,
                    out_path: str = "outfit.png") -> str:
-    """
-    Sinh ảnh từ prompt và lưu ra file PNG. Trả về đường dẫn file.
-    """
+   
     image = pipe(prompt,
                  num_inference_steps=steps,
                  width=width,
