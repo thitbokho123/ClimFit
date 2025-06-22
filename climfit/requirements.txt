@@ -1,4 +1,7 @@
 streamlit
 requests
 python-dotenv
-openai
+Pillow
+torch
+diffusers
+transformers
