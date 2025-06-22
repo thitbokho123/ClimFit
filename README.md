@@ -5,7 +5,7 @@
 ## Features
 
 - 🌍 Get real-time weather based on your city.
-- 👕 Suggest casual, sporty, or formal outfits.
+- 👕 Suggest outfits based on your style.
 - ⚙️ Customize based on gender and age.
 - 🤖 AI-generated outfit ideas via Dify.ai integration.
 - 📸 Stylish image previews (optional).
