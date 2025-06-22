@@ -5,7 +5,6 @@ load_dotenv()
 _API = os.getenv("OPENWEATHER_API_KEY")
 
 def get_weather(city: str) -> dict:
-    """Trả về dict {'temp': 26, 'desc': 'clear sky'} hoặc raise lỗi."""
     url = ("http://api.openweathermap.org/data/2.5/weather"
            f"?q={city}&appid={_API}&units=metric&lang=en")
     res = requests.get(url, timeout=10)
