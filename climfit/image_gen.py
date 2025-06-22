@@ -4,7 +4,7 @@ from PIL import Image
 
 model_id = "CompVis/stable-diffusion-v1-4"
 pipe = StableDiffusionPipeline.from_pretrained(model_id)
-pipe = pipe.to("cpu")  # dùng CPU nếu không có GPU
+pipe = pipe.to("cpu")  
 
 def generate_image(prompt: str,
                    steps: int = 20,
