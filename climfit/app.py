@@ -1,7 +1,7 @@
 import streamlit as st
 from services.weather_api import get_weather
 from services.dify_api import get_outfit_advice
-from image_gen import generate_image  # thay vì sdxl_generate
+from image_gen import generate_image  
 
 st.set_page_config(page_title="Weather Outfit Advisor")
 st.title("Weather-Based Outfit Advisor")
@@ -26,7 +26,7 @@ if city:
     if st.button("Generate outfit image"):
         with st.spinner("Generating…"):
             try:
-                img_path = generate_image(advice)  # chạy local
+                img_path = generate_image(advice)  
                 st.image(img_path, caption="Suggested outfit")
             except Exception as e:
                 st.error(f"❌ {e}")
