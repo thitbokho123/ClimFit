@@ -6,11 +6,6 @@ _DIFY = os.getenv("DIFY_API_KEY")
 _URL  = "https://api.dify.ai/v1/completion-messages"
 
 def get_outfit_advice(weather: dict, gender: str, age: int, style: str) -> str:
-    """
-    Gọi Dify → nhận mô tả outfit (văn bản).
-    Ghép thêm gender / age / style / weather vào cuối prompt
-    để DALL·E-3 hiểu bối cảnh.
-    """
     payload = {
         "inputs": {
             "weather_description": weather["desc"],
@@ -35,14 +30,11 @@ def get_outfit_advice(weather: dict, gender: str, age: int, style: str) -> str:
             raise RuntimeError("Empty answer from Dify")
 
     except Exception as e:
-        # fallback nếu call Dify lỗi
         print("Dify error:", e)
         core = "A stylish and comfortable outfit"
 
-    # ───────── Prompt hoàn chỉnh gửi thẳng DALL·E ─────────
     prompt = (
         f"{gender} outfit for a {age}-year-old, {style} style. "
         f"{core} "
     )
-    # cắt < 1000 ký tự để chắc ăn
     return prompt[:1000]
